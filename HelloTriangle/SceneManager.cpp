@@ -80,7 +80,9 @@ void SceneManager::key_callback(GLFWwindow * window, int key, int scancode, int 
 	{
 		if (action == GLFW_PRESS) {
 			keys[key] = true;
-			if (key >= 262 && key <= 265) {
+			//cout << endl << "pressionou tecla : " << key;
+			//if (key >= 262 && key <= 265) {
+			if ((key >= 321 && key <= 324) || (key >= 326 && key <= 329)) {
 				//adiciona em uma fila para ser consumida ao renderizar
 				filaMovimentos.push(key); 
 			}
@@ -100,6 +102,7 @@ glm::mat4 SceneManager::atualizarPosicaoPersonagem()
 	while (!filaMovimentos.empty()) {
 		switch (filaMovimentos.front())
 		{
+			/*
 			case 262:
 				newModelSprite = glm::translate(newModelSprite, glm::vec3(widthTile / 2, heightTile / 2, 0.0));
 				break;
@@ -112,6 +115,7 @@ glm::mat4 SceneManager::atualizarPosicaoPersonagem()
 			case 265:
 				newModelSprite = glm::translate(newModelSprite, glm::vec3(widthTile / 2, -heightTile / 2, 0.0));
 				break;
+			*/
 			/*
 			case 262:
 				newModelSprite = glm::translate(newModelSprite, glm::vec3(widthTile / 2, -heightTile / 2, 0.0));
@@ -129,21 +133,41 @@ glm::mat4 SceneManager::atualizarPosicaoPersonagem()
 			/*
 			case 262:
 				newModelSprite = glm::translate(newModelSprite, glm::vec3(widthTile, 0.0, 0.0));
-				//newModelSprite = glm::translate(newModelSprite, glm::vec3(widthTile / 2, -heightTile / 2, 0.0));
 				break;
 			case 263:
 				newModelSprite = glm::translate(newModelSprite, glm::vec3(-widthTile, 0, 0.0));
-				//newModelSprite = glm::translate(newModelSprite, glm::vec3(-widthTile / 2, -heightTile / 2, 0.0));
 				break;
 			case 264:
 				newModelSprite = glm::translate(newModelSprite, glm::vec3(0.0, heightTile, 0.0));
-				//newModelSprite = glm::translate(newModelSprite, glm::vec3(-widthTile / 2, heightTile / 2, 0.0));
 				break;
 			case 265:
 				newModelSprite = glm::translate(newModelSprite, glm::vec3(0.0, -heightTile, 0.0));
-				//newModelSprite = glm::translate(newModelSprite, glm::vec3(widthTile / 2, -heightTile / 2, 0.0));
 				break;
-				*/
+			*/	
+			case 326: //L
+				newModelSprite = glm::translate(newModelSprite, glm::vec3(widthTile, 0.0, 0.0));
+				break;
+			case 324: //O
+				newModelSprite = glm::translate(newModelSprite, glm::vec3(-widthTile, 0, 0.0));
+				break;
+			case 322: //S
+				newModelSprite = glm::translate(newModelSprite, glm::vec3(0.0, heightTile, 0.0));
+				break;
+			case 328: //N
+				newModelSprite = glm::translate(newModelSprite, glm::vec3(0.0, -heightTile, 0.0));
+				break;
+			case 329: //NE
+				newModelSprite = glm::translate(newModelSprite, glm::vec3(widthTile / 2, -heightTile / 2, 0.0));
+				break;
+			case 321: //SO
+				newModelSprite = glm::translate(newModelSprite, glm::vec3(-widthTile / 2, heightTile / 2, 0.0));
+				break;
+			case 323: //SE
+				newModelSprite = glm::translate(newModelSprite, glm::vec3(widthTile / 2, heightTile / 2, 0.0));
+				break;
+			case 327: //NO
+				newModelSprite = glm::translate(newModelSprite, glm::vec3(-widthTile / 2, -heightTile / 2, 0.0));
+				break;
 			default:
 				break;
 		}
@@ -212,7 +236,6 @@ void SceneManager::render()
 	{
 		inicializacao = false;
 		sprite.draw(modelIniSprite);
-		//sprite.draw(glm::translate(modelIniSprite, glm::vec3(0.0, 30.0, 0.0)));
 	}
 	else 
 	{
@@ -449,7 +472,7 @@ void SceneManager::loadTilemapFile()
 			map[5][linha] = t6;
 			map[6][linha] = t7;
 			map[7][linha] = t8;
-			cout << "leu linha " << t1 << t2 << t3 << t4 << t5 << t6 << t7 << t8;
+			//cout << "leu linha " << t1 << t2 << t3 << t4 << t5 << t6 << t7 << t8;
 			linha++;
 		}
 		arqEntrada.close();
