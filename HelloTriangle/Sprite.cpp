@@ -15,37 +15,18 @@ void Sprite::inicializar(float th, float tw)
 {
 	this->th = th;
 	this->tw = tw;
-	////Inicializando com as coordenadas do losango
-	/*
+
 	float vertices[] = {
-		0.0f,  0.0f,  0.0f,  textureCoord[0].x, textureCoord[0].y, // A
-		0.0f,  th  ,  0.0f,  textureCoord[1].x, textureCoord[1].y, // B
-		tw  ,  th  ,  0.0f,  textureCoord[2].x, textureCoord[2].y, // C
-		tw  ,  0.0f,  0.0f,  textureCoord[3].x, textureCoord[3].y  // D
-	};
-	*/
-	float vertices[] = {
-		0.0f, 0.0f,  0.0f,  textureCoord[0].x, textureCoord[0].y, // A
-		0.0f,   th,  0.0f,  textureCoord[1].x, textureCoord[1].y, // B
-		  tw,   th,  0.0f,  textureCoord[2].x, textureCoord[2].y, // C
-		  tw, 0.0f,  0.0f,  textureCoord[3].x, textureCoord[3].y  // D
+		0.0f, 0.0f,  0.0f,  0.0f, 0.0f, // A
+		0.0f,   th,  0.0f,  0.0f, 1.0f, // B
+		  tw,   th,  0.0f,  1.0f, 1.0f, // C
+		  tw, 0.0f,  0.0f,  1.0f, 0.0f  // D
 	};
 	int indices[] = {
 		0, 1, 2,
 		0, 2, 3,
 	};
-	/*
-	float vertices[] = {
-		   0.0f,  th / 2.0f,  0.0f,  textureCoord[1].x, textureCoord[1].y, // A
-		tw / 2.0f,       th,  0.0f,  textureCoord[2].x, textureCoord[2].y, // B
-			 tw,  th / 2.0f,  0.0f,  textureCoord[3].x, textureCoord[3].y, // C
-		tw / 2.0f,     0.0f,  0.0f,  textureCoord[0].x, textureCoord[0].y  // D
-	};
-	int indices[] = {
-		0, 1, 2,  
-		0, 2, 3,  
-	};
-	*/
+
 	glGenVertexArrays(1, &VAO);
 	glGenBuffers(1, &VBO);
 	glGenBuffers(1, &EBO);

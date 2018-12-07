@@ -25,21 +25,6 @@ void SceneManager::initialize(GLuint w, GLuint h)
 	
 	// GLFW - GLEW - OPENGL general setup -- TODO: config file
 	initializeGraphics();
-
-	queue<int> fila;
-	for (int i = 0; i < 10; i++) {
-		fila.push(i);
-	}
-	cout << fila.front() << endl;
-	fila.pop();
-	cout << fila.front() << endl;
-	fila.pop();
-
-	while(!fila.empty()) {
-		cout << fila.front() << endl;
-		fila.pop();
-	}
-
 }
 
 void SceneManager::initializeGraphics()
@@ -115,7 +100,6 @@ glm::mat4 SceneManager::atualizarPosicaoPersonagem()
 	while (!filaMovimentos.empty()) {
 		switch (filaMovimentos.front())
 		{
-
 			case 262:
 				newModelSprite = glm::translate(newModelSprite, glm::vec3(widthTile / 2, heightTile / 2, 0.0));
 				break;
@@ -280,8 +264,10 @@ void SceneManager::finish()
 
 void SceneManager::setupScene()
 {
+	//Carrega texturas
 	setupTexture();
-
+	
+	//Carrega Tileset
 	TileIso tile;
 	tile.setShader(shader);
 	tile.setTexture(texture);
@@ -289,11 +275,6 @@ void SceneManager::setupScene()
 	for (int i = 0; i < 8; i++) {
 		for (int j = 0; j < 12; j++) {
 			vector<glm::vec2> coord1 = getCoordTextureTile(i, j);
-			cout << "tile (" << i << ", " << j << ") = ";
-			for (int idx = 0; idx < 4; idx++) {
-				cout << "(" << coord1[idx].x << ", " << coord1[idx].y << ") ";
-			}
-			cout << endl;
 			tile.setCor(0.0, 0.0, 0.0);
 			tile.setTextureCoord(coord1);
 			tile.inicializar(64, 128);
@@ -301,34 +282,13 @@ void SceneManager::setupScene()
 			tileset.push_back(tile);
 		}
 	}
-		/*
-	int x = 0;
-	for (int i = 0; i < 8; i++) {
-		for (int j = 0; j < 8; j++) {
-			map[i][j] = 50;
-		}
-	}
-	map[0][0] = 14;
-	map[0][1] = 4;
-	map[0][2] = 4;
-	map[0][3] = 4;
-	map[1][0] = 41;
-	map[1][1] = 28;
-	map[1][2] = 28;
-	map[1][3] = 28;
-	*/
+	//carrega map
 	loadTilemapFile();
-	vector<glm::vec2> coordTexSprite;
-	coordTexSprite.push_back(glm::vec2(0.0f, 0.0f));
-	coordTexSprite.push_back(glm::vec2(0.0f, 1.0f));
-	coordTexSprite.push_back(glm::vec2(1.0f, 1.0f));
-	coordTexSprite.push_back(glm::vec2(1.0f, 0.0f));
 
+	//cria e inicializa sprite do personagem
 	sprite.setShader(shader);
 	sprite.setTexture(textureSprite);
 	tile.setCor(0.0, 0.0, 0.0);
-	sprite.setTextureCoord(coordTexSprite);
-	//sprite.inicializar(40.0, 30.0);
 	sprite.inicializar(64, 128);
 }
 
