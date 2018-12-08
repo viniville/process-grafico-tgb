@@ -380,7 +380,6 @@ void SceneManager::setupTexture()
 
 	// load image, create texture and generate mipmaps
 	int t_width, t_height, nrChannels;
-	//unsigned char *data = SOIL_load_image("../textures/wall.jpg", &width, &height, 0, SOIL_LOAD_RGB);
 	unsigned char *data = stbi_load("../textures/tileset2.png", &t_width, &t_height, &nrChannels, 0);
 	
 	cout << "Textura do tileset" << endl;
@@ -421,7 +420,6 @@ void SceneManager::setupTexture()
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-	//unsigned char *data = SOIL_load_image("../textures/wall.jpg", &width, &height, 0, SOIL_LOAD_RGB);
 	unsigned char *data2 = stbi_load("../textures/mario4.png", &t_width, &t_height, &nrChannels, 0);
 
 	cout << "Textura do sprite" << endl;
@@ -471,7 +469,6 @@ void SceneManager::loadTilemapFile()
 			map[5][linha] = t6;
 			map[6][linha] = t7;
 			map[7][linha] = t8;
-			//cout << "leu linha " << t1 << t2 << t3 << t4 << t5 << t6 << t7 << t8;
 			linha++;
 		}
 		arqEntrada.close();
