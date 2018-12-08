@@ -46,7 +46,6 @@ private:
 
 	//our shader program
 	Shader *shader;
-	Shader *shaderSprite;
 
 	//scene attributes
 	GLuint VAO;

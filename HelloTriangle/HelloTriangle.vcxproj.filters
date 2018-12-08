@@ -61,11 +61,5 @@
     <None Include="..\shaders\transformations.vs">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="..\shaders\spriteShader.frag">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\shaders\spriteShader.vs">
-      <Filter>Shaders</Filter>
-    </None>
   </ItemGroup>
 </Project>

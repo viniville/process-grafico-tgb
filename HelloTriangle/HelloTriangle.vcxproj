@@ -136,8 +136,6 @@
     <ClInclude Include="TileIso.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\shaders\spriteShader.frag" />
-    <None Include="..\shaders\spriteShader.vs" />
     <None Include="..\shaders\transformations.frag" />
     <None Include="..\shaders\transformations.vs" />
   </ItemGroup>

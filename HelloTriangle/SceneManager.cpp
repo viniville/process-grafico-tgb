@@ -66,10 +66,6 @@ void SceneManager::loadShaders()
 	string vFilename = "../shaders/transformations.vs";
 	string fFilename = "../shaders/transformations.frag";
 	shader = new Shader(vFilename.c_str(), fFilename.c_str());
-
-	vFilename = "../shaders/spriteShader.vs";
-	fFilename = "../shaders/spriteShader.frag";
-	shaderSprite = new Shader(vFilename.c_str(), fFilename.c_str());
 }
 
 void SceneManager::key_callback(GLFWwindow * window, int key, int scancode, int action, int mode)
