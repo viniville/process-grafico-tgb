@@ -242,15 +242,18 @@ void SceneManager::render()
 		} else 
 		{
 			newPosition = atualizarPosicaoPersonagem();
+			bool posicaoInvalida = true;
 			for (int i = 0; i < tilesDesenhados.size(); i++)
 			{
 				if (tilesDesenhados[i] == newPosition)
 				{
-					cout << "achou tile na mesma posicao" << endl;
+					posicaoInvalida = false;
 					sprite.draw(newPosition);
 					break;
 				}
 			}
+			if (posicaoInvalida)
+				cout << "Movimento nao permitido. Posicao de destino nao eh acessivel para o personagem" << endl;
 		}
 	}
 }
@@ -380,8 +383,9 @@ void SceneManager::setupTexture()
 	//unsigned char *data = SOIL_load_image("../textures/wall.jpg", &width, &height, 0, SOIL_LOAD_RGB);
 	unsigned char *data = stbi_load("../textures/tileset2.png", &t_width, &t_height, &nrChannels, 0);
 	
+	cout << "Textura do tileset" << endl;
 	cout << "Nro de canais: " << nrChannels << endl;
-	cout << "largura x altura: " << t_width << " x " << t_height << endl;
+	cout << "largura x altura: " << t_width << " x " << t_height << endl << endl;
 
 	/*Configura o numero de tiles existentes na textura*/
 	numTilesTexture.x = 8.0f;
@@ -420,8 +424,9 @@ void SceneManager::setupTexture()
 	//unsigned char *data = SOIL_load_image("../textures/wall.jpg", &width, &height, 0, SOIL_LOAD_RGB);
 	unsigned char *data2 = stbi_load("../textures/mario4.png", &t_width, &t_height, &nrChannels, 0);
 
+	cout << "Textura do sprite" << endl;
 	cout << "Nro de canais: " << nrChannels << endl;
-	cout << "largura x altura: " << t_width << " x " << t_height << endl;
+	cout << "largura x altura: " << t_width << " x " << t_height << endl << endl;
 
 	if (data2)
 	{
