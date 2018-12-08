@@ -5,7 +5,7 @@ Para configuracao das imagens dos tiles mapa, foi criado o arquivo mapa.txt. Est
 Este arquivo define o índice das imagens das texturas no mapa.
 
 Olhando para a imagem de textura do tileset, a ordem é a seguinte:
-
+```
 0	12	24	36	48	60	72	84
 1	13	25	37	49	61	73	85
 2	14	26	38	50	62	74	86
@@ -18,10 +18,10 @@ Olhando para a imagem de textura do tileset, a ordem é a seguinte:
 9	21	33	45	57	69	81	93
 10	22	34	46	58	70	82	94
 11	23	35	47	59	71	83	95
-
+```
 
 Indices de posicoes do map que monta o map
-
+```
 							0,0							
 						0,1		1,0						
 					0,2		1,1		2,0					
@@ -37,3 +37,4 @@ Indices de posicoes do map que monta o map
 					5,7		6,6		7,5					
 						6,7		7,6						
 							7,7							
+```
