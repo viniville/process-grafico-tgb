@@ -40,7 +40,7 @@ Olhando para a imagem de textura do tileset, a ordem é a seguinte:
 11	23	35	47	59	71	83	95
 ```
 
-Indices de posicoes do map que monta o map
+Indices de posicoes do map que monta o mapa (diamond):
 ```
 							0,0							
 						0,1		1,0						
