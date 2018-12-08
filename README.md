@@ -1,5 +1,25 @@
 # process-grafico-tgb
 
+A movimentação do personagem é feita usando o teclado numérico:
+
+```
+NO		N		NE
+	7	8	9	
+O	4		6	L
+	1	2	3	
+SO		S		SE
+
+Ou seja: 
+1 = SO
+2 = S
+3 = SE
+4 = O
+6 = L
+7 = NO
+8 = N
+9 = NE
+```
+
 Para configuracao das imagens dos tiles mapa, foi criado o arquivo mapa.txt. Este arquivo encontra-se em ../textures/mapa.txt.
 
 Este arquivo define o índice das imagens das texturas no mapa.

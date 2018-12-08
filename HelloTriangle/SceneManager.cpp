@@ -98,48 +98,6 @@ glm::mat4 SceneManager::atualizarPosicaoPersonagem()
 	while (!filaMovimentos.empty()) {
 		switch (filaMovimentos.front())
 		{
-			/*
-			case 262:
-				newModelSprite = glm::translate(newModelSprite, glm::vec3(widthTile / 2, heightTile / 2, 0.0));
-				break;
-			case 263:
-				newModelSprite = glm::translate(newModelSprite, glm::vec3(-widthTile / 2, -heightTile / 2, 0.0));
-				break;
-			case 264:
-				newModelSprite = glm::translate(newModelSprite, glm::vec3(-widthTile / 2, heightTile / 2, 0.0));
-				break;
-			case 265:
-				newModelSprite = glm::translate(newModelSprite, glm::vec3(widthTile / 2, -heightTile / 2, 0.0));
-				break;
-			*/
-			/*
-			case 262:
-				newModelSprite = glm::translate(newModelSprite, glm::vec3(widthTile / 2, -heightTile / 2, 0.0));
-				break;
-			case 263:
-				newModelSprite = glm::translate(newModelSprite, glm::vec3(-widthTile / 2, heightTile / 2, 0.0));
-				break;
-			case 264:
-				newModelSprite = glm::translate(newModelSprite, glm::vec3(widthTile / 2, heightTile / 2, 0.0));
-				break;
-			case 265:
-				newModelSprite = glm::translate(newModelSprite, glm::vec3(-widthTile / 2, -heightTile / 2, 0.0));
-				break;
-			*/
-			/*
-			case 262:
-				newModelSprite = glm::translate(newModelSprite, glm::vec3(widthTile, 0.0, 0.0));
-				break;
-			case 263:
-				newModelSprite = glm::translate(newModelSprite, glm::vec3(-widthTile, 0, 0.0));
-				break;
-			case 264:
-				newModelSprite = glm::translate(newModelSprite, glm::vec3(0.0, heightTile, 0.0));
-				break;
-			case 265:
-				newModelSprite = glm::translate(newModelSprite, glm::vec3(0.0, -heightTile, 0.0));
-				break;
-			*/	
 			case 326: //L
 				newModelSprite = glm::translate(newModelSprite, glm::vec3(widthTile, 0.0, 0.0));
 				break;
