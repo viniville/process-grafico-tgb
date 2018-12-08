@@ -294,7 +294,6 @@ void SceneManager::setupScene()
 	for (int i = 0; i < 8; i++) {
 		for (int j = 0; j < 12; j++) {
 			vector<glm::vec2> coord1 = getCoordTextureTile(i, j);
-			tile.setCor(0.0, 0.0, 0.0);
 			tile.setTextureCoord(coord1);
 			tile.inicializar(64, 128);
 			tile.setCaminhavel(ehCaminhavel(i, j));
@@ -307,7 +306,6 @@ void SceneManager::setupScene()
 	//cria e inicializa sprite do personagem
 	sprite.setShader(shader);
 	sprite.setTexture(textureSprite);
-	tile.setCor(0.0, 0.0, 0.0);
 	sprite.inicializar(64, 128);
 }
 
